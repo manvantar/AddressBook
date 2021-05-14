@@ -7,19 +7,22 @@ class Contact{
     phoneNumber;
     email;
 
-    /*This constructor is used to initialize the */
-    constructor(param) {
-        this.firstName = param[0];
-        this.lastName = param[1];
-        this.city = param[2];
-        this.state = param[3];
-        this.pincode = param[4];
-        this.phoneNumber = param[5];
-        this.email = param[6];
+    /*This constructor is used to initialize the Contact Variables
+    *@param which takes Array as an parameter
+    */
+    constructor(contactArray) {
+        this.firstName = contactArray[0];
+        this.lastName = contactArray[1];
+        this.city = contactArray[2];
+        this.state = contactArray[3];
+        this.pincode = contactArray[4];
+        this.phoneNumber = contactArray[5];
+        this.email = contactArray[6];
         }
-    }
-    console.log('Welcome to Address book');
 
+    }
+
+    console.log('Welcome to Address book');
     let contact=new Array("Manu","K V","Bengaluru","Karnataka",560076,9663393660,"manukvhetty@gmail.com")
     contact1=new Contact(contact);
     console.log(contact1)
