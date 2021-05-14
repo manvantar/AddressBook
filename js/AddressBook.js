@@ -1,5 +1,13 @@
 class Contact{
+    firstName;
+    lastName;
+    city;
+    state;
+    pincode;
+    phoneNumber;
+    email;
 
+    /*This constructor is used to initialize the */
     constructor(param) {
         this.firstName = param[0];
         this.lastName = param[1];
