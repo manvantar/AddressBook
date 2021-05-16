@@ -1,5 +1,6 @@
 class Contact {
 
+
     /*This constructor is used to initialize the Contact Variables
     *@param which takes Array as an parameter
     */
@@ -11,6 +12,7 @@ class Contact {
         this.pincode = contactArray[4];
         this.phoneNumber = contactArray[5];
         this.email = contactArray[6];
+
     }
 
     /*getter methods for FirstName
@@ -133,8 +135,11 @@ class Contact {
     }
 
 }
+    
+    console.log('Welcome to Address book');
 
+    let contact=new Array("Manu","K V","Bengaluru","Karnataka",560076,9663393660,"manukvhetty@gmail.com")
+    contact1=new Contact(contact);
+    console.log(contact1.toString());
+    
 
-console.log('Welcome to Address book');
-let contact = new Array("Manu", "KV", "Bengaluru", "Karnataka",560076, 9663393660, "manukvhetty@gmail.com")
- console.log(contact.toString());
