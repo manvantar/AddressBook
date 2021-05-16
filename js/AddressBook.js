@@ -166,6 +166,7 @@ try {
     contactArray.push(new Contact(new Array("Bhadri", "Veera", "Mysuru", "Karnataka", 560076, 2121212121, "Bhadri@icloud.com")));
     contactArray.push(new Contact(new Array("Maadri", "era", "Udupi", "Karnataka", 5600743, 2221212233, "dri@icloud.com")));
     contactArray.push(new Contact(new Array("Maadri", "era", "Udupi", "Karnataka", 5600743, 2221212233, "dri@icloud.com")));
+    contactArray.push(new Contact(new Array("Bhadri", "Veera", "Mysuru", "Karnataka", 560076, 2121212121, "Bhadri@icloud.com")));
 }
 catch {
     console.log("Issue with your input Please correct")
@@ -181,8 +182,19 @@ let totalcontacts = 1;
  */
 totalcontacts = contactArray.reduce(function (contact) {
     if (contact != null)
-    totalcontacts = totalcontacts + 1;
+        totalcontacts = totalcontacts + 1;
     return totalcontacts;
 });
 
+let duplicatesCount = 0;
+for (i = 0; i < contactArray.length; i++) {
+    for (j = i+1; j < contactArray.length; j++) {
+        contactTest1=contactArray[j];
+        contactTest2=contactArray[i];
+        if (contactTest1.toString()==contactTest2.toString())
+            duplicatesCount = duplicatesCount + 1;
+    }
+}
 console.log(totalcontacts);
+console.log(duplicatesCount);
+
