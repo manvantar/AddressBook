@@ -17,7 +17,7 @@ class Contact {
     /*getter methods for FirstName
     *@return FirstName
     */
-    get firstName() { return firstName; }
+    get firstName() { return this._firstName; }
     
     /*Setter methods for FirstName which inturn checks for RegularExpression
     *@Param FirstName
@@ -33,7 +33,7 @@ class Contact {
     /*getter methods for lastName 
     *@return lastName
     */
-    get lastName() { return this.lastName; }
+    get lastName() { return this._lastName; }
 
    /*Setter methods for lastName which inturn checks for RegularExpression
     *@Param lastName
@@ -49,7 +49,7 @@ class Contact {
     /*getter methods for cityName 
     *@return cityName
     */
-    get city() { return this.city; }
+    get city() { return this._city; }
 
     /*Setter methods for city which inturn checks for RegularExpression
     *@Param city
@@ -65,7 +65,7 @@ class Contact {
     /*getter methods for StateName 
     *@return StateName
     */
-    get state() { return this.state; }
+    get state() { return this._state; }
     
     /*Setter methods for StateName which inturn checks for RegularExpression
     *@Param StateName
@@ -81,7 +81,7 @@ class Contact {
     /*getter methods for pincode 
     *@return pincode
     */
-    get pincode() { return this.pincode; }
+    get pincode() { return this._pincode; }
     
     /*Setter methods for pincode which inturn checks for RegularExpression
     *@Param pincode
@@ -97,7 +97,7 @@ class Contact {
     /*getter methods for phoneNumber 
     *@return phoneNumber
     */
-    get phoneNumber() { return this.phoneNumber; }
+    get phoneNumber() { return this._phoneNumber; }
     
     /*Setter methods for phoneNumber which inturn checks for RegularExpression
     *@Param phoneNumber
@@ -113,7 +113,7 @@ class Contact {
     /*getter methods for email 
     *@return email
     */
-    get email() { return this.email; }
+    get email() { return this._email; }
     
     /*Setter methods for email which inturn checks for RegularExpression
     *@Param email
@@ -134,11 +134,30 @@ class Contact {
     }
 
 }
+
+    /*This Method is used to CheckContact by Name and update Name
+     *@param Contactlist, Oldname, newname
+     *@return boolean value for updation
+    */
+    function checkAndUpdate(contactArray,oldname,newName){
+        names= contactArray.filter(contact => contact.firstName == oldname).map(contact => contact.firstName = newName);
+        if(names[0]==newName)
+            return true;
+        return false;
+    }
+
+
     let contactArray=new Array();    
     console.log('Welcome to Address book');
     contact1=new Contact(new Array("Manu","KV","Bengaluru","Karnataka",560076,9663393660,"manukvhetty@gmail.com"));
-    contactArray.push(contact1);
+    
+    try{contactArray.push(contact1);
     contactArray.push(new Contact(new Array("Bhadri","Veera","Mysuru","Karnataka",560076,2121212121,"Bhadri@icloud.com")));
-    contactArray.push(new Contact(new Array("Maadri","era","Udupi","Karnataka",5600743,2121223221,"dri@icloud.com")));
+    contactArray.push(new Contact(new Array("Maadri","era","Udupi","Karnataka",5600743,2221212233,"dri@icloud.com")));
+    }
+    catch{
+        console.log("Issue with your input Please correct")
+    }
+
+    console.log(checkAndUpdate(contactArray,"Manu","Anu"));
     console.log(contactArray);
- 
