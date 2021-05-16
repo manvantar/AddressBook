@@ -1,6 +1,5 @@
 class Contact {
 
-
     /*This constructor is used to initialize the Contact Variables
     *@param which takes Array as an parameter
     */
@@ -135,11 +134,11 @@ class Contact {
     }
 
 }
-    
+    let contactArray=new Array();    
     console.log('Welcome to Address book');
-
-    let contact=new Array("Manu","K V","Bengaluru","Karnataka",560076,9663393660,"manukvhetty@gmail.com")
-    contact1=new Contact(contact);
-    console.log(contact1.toString());
-    
-
+    contact1=new Contact(new Array("Manu","KV","Bengaluru","Karnataka",560076,9663393660,"manukvhetty@gmail.com"));
+    contactArray.push(contact1);
+    contactArray.push(new Contact(new Array("Bhadri","Veera","Mysuru","Karnataka",560076,2121212121,"Bhadri@icloud.com")));
+    contactArray.push(new Contact(new Array("Maadri","era","Udupi","Karnataka",5600743,2121223221,"dri@icloud.com")));
+    console.log(contactArray);
+ 
