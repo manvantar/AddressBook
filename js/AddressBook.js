@@ -146,6 +146,16 @@ class Contact {
         return false;
     }
 
+    /*This Method is used to delete contact by Name 
+     *@param Contactlist, name
+     *@return deleted contact if exists else return "false"
+    */
+    function deleteContactByName(contactArray,name){
+       var indexOfContact= contactArray.findIndex(contact=>contact.firstName==name); 
+       if(indexOfContact>=0)
+            return contactArray.splice(indexOfContact,1);
+        return "false";
+    }
 
     let contactArray=new Array();    
     console.log('Welcome to Address book');
@@ -160,4 +170,6 @@ class Contact {
     }
 
     console.log(checkAndUpdate(contactArray,"Manu","Anu"));
+    console.log("=====================================");
+    console.log(deleteContactByName(contactArray,"Manu"));
     console.log(contactArray);
